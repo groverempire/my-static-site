@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Namandeep Grover | Portfolio</title>
+
+  <!-- CSS -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* Header */
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #2563eb, #1e40af);
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    header h1 {
+      font-size: 3rem;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      margin-top: 10px;
+      opacity: 0.9;
+    }
+
+    .btn {
+      margin-top: 25px;
+      padding: 12px 26px;
+      background: #020617;
+      color: #93c5fd;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    /* Navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(2, 6, 23, 0.95);
+      padding: 12px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      backdrop-filter: blur(6px);
+    }
+
+    nav a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background: #60a5fa;
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      color: #60a5fa;
+      margin-bottom: 30px;
+      font-size: 2.2rem;
+      text-align: center;
+    }
+
+    .card {
+      background: #020617;
+      padding: 25px;
+      border-radius: 16px;
+      margin-bottom: 25px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+
+    ul li {
+      background: #020617;
+      padding: 12px;
+      border-radius: 10px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #020617;
+      color: #94a3b8;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Namandeep Grover</h1>
+    <p>Python Developer | Aspiring Cloud Engineer</p>
+    <a href="#contact" class="btn">Contact Me</a>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>
+        I am a Python Developer with a strong interest in Cloud Computing and DevOps. 
+        I enjoy building backend systems, learning AWS services, and solving real-world problems.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>Python, C</li>
+      <li>HTML, CSS, JavaScript</li>
+      <li>Data Structures & Algorithms</li>
+      <li>AWS (Learning)</li>
+      <li>Linux Basics</li>
+      <li>Git & GitHub</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card">
+      <h3>Travello – Travel Website Analysis</h3>
+      <p>Academic project analyzing features, performance, and usability of a travel booking platform.</p>
+    </div>
+    <div class="card">
+      <h3>Programming Practice</h3>
+      <p>Python & C programs including Fibonacci, prime numbers, factorials, and loops.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      <p>Email: ndgrover1904@gmail.com</p>
+      <p>GitHub: github.com/grover1904empire</p>
+      <p>LinkedIn: linkedin.com/in/namandeep-grover-942377230</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Namandeep Grover | Portfolio</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const sections = document.querySelectorAll('section');
+
+    const reveal = () => {
+      const trigger = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        if (top < trigger) {
+          section.classList.add('show');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', reveal);
+    reveal();
+  </script>
+
+</body>
+</html>
