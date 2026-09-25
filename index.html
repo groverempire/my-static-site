@@ -21,7 +21,6 @@
       scroll-behavior: smooth;
     }
 
-    /* Header */
     header {
       min-height: 100vh;
       display: flex;
@@ -60,7 +59,6 @@
       transform: translateY(-3px);
     }
 
-    /* Navbar */
     nav {
       position: sticky;
       top: 0;
@@ -95,7 +93,6 @@
       width: 100%;
     }
 
-    /* Sections */
     section {
       padding: 80px 20px;
       max-width: 1000px;
@@ -143,7 +140,6 @@
       border-radius: 10px;
     }
 
-    /* Footer */
     footer {
       text-align: center;
       padding: 25px;
@@ -151,7 +147,6 @@
       color: #94a3b8;
     }
 
-    /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -162,7 +157,7 @@
 
   <header>
     <h1>Namandeep Grover</h1>
-    <p>Python Developer | Aspiring Cloud Engineer</p>
+    <p>AWS Cloud Support Engineer | Python Developer</p>
     <a href="#contact" class="btn">Contact Me</a>
   </header>
 
@@ -177,8 +172,7 @@
     <h2>About Me</h2>
     <div class="card">
       <p>
-        I am a Python Developer with a strong interest in Cloud Computing and DevOps. 
-        I enjoy building backend systems, learning AWS services, and solving real-world problems.
+        I am an AWS Cloud Support Engineer and Python Developer with hands-on experience deploying and managing applications on AWS.
       </p>
     </div>
   </section>
@@ -215,28 +209,3 @@
       <p>LinkedIn: linkedin.com/in/namandeep-grover-942377230</p>
     </div>
   </section>
-
-  <footer>
-    <p>© 2026 Namandeep Grover | Portfolio</p>
-  </footer>
-
-  <!-- JavaScript -->
-  <script>
-    const sections = document.querySelectorAll('section');
-
-    const reveal = () => {
-      const trigger = window.innerHeight * 0.85;
-      sections.forEach(section => {
-        const top = section.getBoundingClientRect().top;
-        if (top < trigger) {
-          section.classList.add('show');
-        }
-      });
-    };
-
-    window.addEventListener('scroll', reveal);
-    reveal();
-  </script>
-
-</body>
-</html>
